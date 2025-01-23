@@ -11,7 +11,11 @@ const SignUp = () => {
 
     return (
         <div className="sign-up">
-            <h2>Sign-Up</h2>
+            <div className="nav">
+                <div className="heading">
+                    <h2>Sign-Up</h2>
+                </div>
+            </div>
             <form>
                 <input type="text"
                     required
@@ -26,6 +30,12 @@ const SignUp = () => {
                     onChange={(e) => {setUsername(e.target.value)}}
                 />
                 <input type="text"
+                        required
+                        placeholder="Email"
+                        value = {email}
+                        onChange={(e) => {setEmail(e.target.value)}}
+                />
+                <input type="text"
                     required
                     placeholder="Password"
                     value = {password}
@@ -36,12 +46,6 @@ const SignUp = () => {
                     placeholder="Confirm Password"
                     value = {confirmPassword}
                     onChange={(e) => {setConfirmPassword(e.target.value)}}
-                />
-                <input type="text"
-                    required
-                    placeholder="Email"
-                    value = {email}
-                    onChange={(e) => {setEmail(e.target.value)}}
                 />
 
                 <button>Create Account</button>
