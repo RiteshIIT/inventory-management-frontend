@@ -3,21 +3,21 @@ import Saleslist from './saleslist';
 const Homepage = () => {
     var productlist=[
         {
-            date: "13th Jan",
-            day: "monday",
-            products: {
-                maggi: 2,
-                soap: 3,
-                copy: 1,
-            },
-        },
-        {
             date: "12th Jan",
             day: "sunday",
             products: {
                 maggi: 3,
                 soap: 1,
                 copy: 2,
+            },
+        },
+        {
+            date: "13th Jan",
+            day: "monday",
+            products: {
+                maggi: 2,
+                soap: 3,
+                copy: 1,
             },
         },
         {
@@ -33,17 +33,17 @@ const Homepage = () => {
     return ( 
          <div id="homepage">
             <div id="homepagehead">
-                Welcome, user
+                Welcome, user  
             </div>
             <div id="sidebar">
-                <div className="sidebaritem" id="newprod">New product <div id="plus">  +</div>
+                <div className="sidebaritem" id="newprod">New product <div id="plus">+</div>
                 </div>
                 <div className="sidebaritem">Analytics</div>
                 <div className="sidebaritem">History</div>
                 <div className="sidebaritem">Feedback</div>
                 <div className="sidebaritem">settings</div>
             </div>
-            
+            <div id="profile"></div>
             <div id="recentsales">
                 <div id="recentsaleshead">
                     Recent sales
