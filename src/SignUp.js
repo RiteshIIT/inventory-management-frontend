@@ -1,5 +1,6 @@
 import { useState } from "react";
-import './SignUp.css'
+import './SignUp.css';
+import signup from './images/signup.png';
 
 const SignUp = () => {
 
@@ -16,43 +17,50 @@ const SignUp = () => {
                     <h2>Sign-Up</h2>
                 </div>
             </div>
-            <form>
-                <input type="text"
-                    required
-                    placeholder="Name"
-                    value = {name}
-                    onChange={(e) => {setName(e.target.value)}}
-                />
-                <input type="text"
-                    required
-                    placeholder="Username"
-                    value = {username}
-                    onChange={(e) => {setUsername(e.target.value)}}
-                />
-                <input type="text"
-                        required
-                        placeholder="Email"
-                        value = {email}
-                        onChange={(e) => {setEmail(e.target.value)}}
-                />
-                <input type="text"
-                    required
-                    placeholder="Password"
-                    value = {password}
-                    onChange={(e) => {setPassword(e.target.value)}}
-                />
-                <input type="text"
-                    required
-                    placeholder="Confirm Password"
-                    value = {confirmPassword}
-                    onChange={(e) => {setConfirmPassword(e.target.value)}}
-                />
+            <div className="container">
+                <div className="img">
+                    <img src={signup} alt="Sign-up Img" />
+                </div>
+                <div className="form">
+                    <form>
+                        <input type="text"
+                            required
+                            placeholder="Name"
+                            value={name}
+                            onChange={(e) => { setName(e.target.value) }}
+                        />
+                        <input type="text"
+                            required
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => { setUsername(e.target.value) }}
+                        />
+                        <input type="text"
+                            required
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => { setEmail(e.target.value) }}
+                        />
+                        <input type="text"
+                            required
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => { setPassword(e.target.value) }}
+                        />
+                        <input type="text"
+                            required
+                            placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={(e) => { setConfirmPassword(e.target.value) }}
+                        />
 
-                <button>Create Account</button>
+                        <button>Create Account</button>
+                    </form>
+                </div>
 
-            </form>
-        </div> 
-     );
+            </div>
+        </div>
+    );
 }
  
 export default SignUp;
