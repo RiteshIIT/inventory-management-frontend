@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300..700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+#headbar{
+    position: absolute;
+    height: 20.4vh;
+    width: 100vw;
+    background-color: #B6686A;
+    padding-left: 26.5vw;
+    padding-top: 7vh;
+    box-sizing: border-box;
+}
+#itemno{
+    display: inline-block;
+    background-color: #FF9FA1;
+    height: 8.8vh;
+    box-sizing: border-box;
+    width: 20.4vw;
+    text-align: center;
+    border-radius: 25px;
+    color: #F8F8F8;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1.7vh;
+    margin-right: 6.3vw;
+    font-family: 'Inria Sans';
+}
+#quantity{
+    display: inline-block;
+    background-color: #FF9FA1;
+    height: 8.8vh;
+    box-sizing: border-box;
+    width: 20.4vw;
+    text-align: center;
+    border-radius: 25px;
+    color: #F8F8F8;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1.7vh;
+    font-family: 'Inria Sans';
+}
+#itemlist{
+    height: 64vh;
+    width: 93vw;
+    position: absolute;
+    top: 20vh;
+    display: flex;
+    flex-flow: row;
+    gap: 6.25vw;
+    padding-top: 4.2vh;
+    flex-wrap: wrap;
+    padding-left: 6.25vw;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    row-gap: 2vh;
+}
+.item{
+    width: 9.2vw;
+    position: relative;
+    height: 27vh;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#itemlist:hover .item{
+    opacity: 0.9;
+}
+#itemlist:hover .item:hover{
+    transform: scale(1.15);
+    opacity: 1; 
+}
+.itemname{
+    position: absolute;
+    height: 8.6vh;
+    width: 100%;
+    top: 20vh;
+    font-family: 'Inria Sans';
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+.itemname:hover{
+    text-decoration: underline;
+}
+.itemimg{
+    position: absolute;
+    height: 19.11vh;
+    width: 100%;
+}
+.itemquant{
+    position: absolute;
+    height: 8.5vh;
+    width: 8.5vh;
+    border-radius: 8.5vh;
+    left: -3.5vh;
+    top: -2vh;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 36px;
+    font-family: 'Inria Sans';
+    color:#FFFFFF ;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1.6vh;
+}
+#stop{
+    position: absolute;
+    top: 82vh;
+    width: 21.4vw;
+    height: 10.8vh;
+    border-radius: 44px;
+    background-color: #CAFF59;
+    text-align: center;
+    font-family: 'Inria Sans';
+    font-weight: 700;
+    font-size: 36px;
+    box-sizing: border-box;
+    left: 39vw;
+    border: none;
+}
+#stop:hover{
+    cursor: pointer;
+    border: 1px solid rgb(255, 201, 201);
+}

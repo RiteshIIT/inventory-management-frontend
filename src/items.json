@@ -1,0 +1,20 @@
+{
+     "item1":{
+        "name":"Chips",
+        "img":"https://i5.walmartimages.com/asr/8a71fcba-e670-4b5c-9120-8b162d739de3_1.39861ccb364e931a9b4411d1e96484c5.jpeg",
+        "quantity":9,
+        "id":1
+    },
+    "item2":{
+        "name":"maggi",
+        "img":"https://apnafoodmarket.com/wp-content/uploads/2020/06/maggi-2-minutes-noodles.jpg",
+        "quantity":3,
+        "id":2
+    },
+    "item3":{
+        "name":"kitkat",
+        "img":"https://th.bing.com/th/id/R.9938362deb42f652c3d5726aa22fa946?rik=POGgyHH9HOe%2f6A&riu=http%3a%2f%2fcdn2.bigcommerce.com%2fserver5100%2fh711h5%2fproducts%2f982%2fimages%2f1757%2fkit_kat__91519.1485997572.1280.1280.png%3fc%3d2&ehk=vu6A%2bSKyZ5uKEl8qcmo7vWqMYRC8CAIUIbqGAx2MDBI%3d&risl=&pid=ImgRaw&r=0",
+        "quantity":5,
+        "id":3
+    }
+}
