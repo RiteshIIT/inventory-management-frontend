@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignUp from './SignUp';
 import Homepage from './Home';
 import InventoryPage from './InventoryPage';
+import Summary from './Summary';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path='/inventory-page'>
             <InventoryPage/>
+          </Route>
+          <Route exact path='/summary'>
+            <Summary/>
           </Route>
         </Switch>
 

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    color: #282828;
+    font-family: "Inria Sans";
+  }
+
+.box {
+    background-color: #FF9FA1;
+    width: 21.875vw;
+    height: 7.091vh;
+    border-radius: 2.421vw;
+    margin-top: 6.61vh;
+    margin-left: 3.28vw;
+    text-align: center; 
+  }
+  
+.box h2{
+    height: 5.168vh;
+    width: 11.95vw;
+    margin-left: 4.14vw;
+    margin-top: 0.841vh;
+    font-size: 4.327vh;
+    line-height: 5.1875vh;
+    font-weight: 700;
+    color: #fff;
+}
+ 
+button{
+    border: none;
+    background: none;
+}
+
+.buttoncontainer{
+    border: none;
+    background-color: #FF9FA1;
+    width: 14.6vw;
+    height: 8.653vh;
+    border-radius: 1.64vw;
+    margin-top: 5.89vh;
+    margin-left: 57.89vw;
+    cursor: pointer;
+}
+
+.continue{
+    margin-left: 2.734vw;
+    margin-top: 1.8vh;
+    width: 8.75vw;
+    font-size: 3.365vh;
+    font-weight: 700;
+    line-height: 4.03vh;
+    color: #fff;
+}
+
+.table {
+    display: flex;
+}
+
+.backbox{
+    background-color: #CAFF59;
+    width: 8.75vw;
+    height: 3.96vh;
+    margin-top: 2.4vh;
+    margin-left: 1.09vw;
+    border-radius: 0.9375vw;
+    
+}
+
+.backbox button{
+    display: flex;
+    align-items: center;
+    margin-left: 0.35vw;
+    gap: 1.7vw;
+    cursor: pointer;
+}
+
+.back{
+    height: 2.88vh;
+    width: 3.28vw;
+    margin-top: 0.48vh;
+    font-size: 2.4vh;
+    line-height: 2.8vh;
+    font-weight: 700;
+    color: #000000;
+}
+
+table {
+   background-color: #FF9FA1; 
+}

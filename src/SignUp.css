@@ -4,33 +4,34 @@
 * {
   margin: 0;
   font-family: "Lato";
-  color: #000000;
-  font-size: 30px;
+  color: #282828;
 }
 
 .nav{
   display: flex;
   background-color: #B6686A;
-  height: 18.43vh;
+  height: 20.43vh;
 }
 
 .heading {
   background-color: #FF9FA1;
-  width: 33.65vh;
+  width: 21.875vw;
   height: 7.091vh;
-  border-radius: 3.726vh;
-  margin-top: 5.49vh;
-  margin-left: 5.168vh;
+  border-radius: 2.421vw;
+  margin-top: 6.49vh;
+  margin-left: 3.36vw;
   display: flex;
   align-items: center;
   text-align: center;
 }
 
 .sign-up h2{
-  line-height: 5.2884vh;
-  height: 5.408vh;
-  width: 1000.347vh;
-  font-size: 4.447vh;
+  height: 5.168vh;
+  width: 9.922vw;
+  margin-left: 5.08vw;
+  margin-top: 0.841vh;
+  font-size: 4.327vh;
+  line-height: 4.1875vh;
   color: #fff;
 }
 
@@ -39,16 +40,16 @@
 }
 
 .img {
-  width: 29.53vh;
-  height: 28.7vh;
+  width: 29.53vw;
+  height: 44.23vh;
   margin-top: 16.34vh;
-  margin-left: 22.4815vh;
+  margin-left: 8.4vw;
 }
 
 .sign-up form {
   color: #000000;
   margin-top: 9.4vh;
-  margin-left: 43vh;
+  margin-left: 12.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,11 +63,11 @@
   border-radius: 3.58vh;
   font-size: 2.5846vh;
   height: 5.6307vh;
-  width: 42.55vh;
+  width: 27.2vw;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-bottom: 4vh;
-  background-color: #9a9a9a4d;
+  background-color: #b6686b4d;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
