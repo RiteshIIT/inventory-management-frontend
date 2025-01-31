@@ -9,37 +9,39 @@ const Summary = () => {
     return (
         <div className="summary">
             <div className="nav">
-                <div className="box">
+                <div className="heading-summary">
                     <h2>Summary</h2>
                 </div>
-                <div className="buttoncontainer">
-                    <button class="continue">Continue</button>
-                </div>
+                <button>Continue</button>
             </div>
             <div className="table">
-                <div className="backbox">
-                    <button class="back">
-                    <FontAwesomeIcon icon={faLessThan} /> Back
-                    </button>
-                </div> 
-
+                <button>
+                    <FontAwesomeIcon className="ic" icon={faLessThan} />Back
+                </button>
+                {/* <div className="table-container"> */}
                 <table>
-                    <tr>
-                        <th>S No.</th>
-                        <th>Item no.</th>
-                        <th>Quantity</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>40</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>42</td>
-                        <td>2</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th class="heading1">S No.</th>
+                            <th class="heading2">Item no.</th>
+                            <th class="heading3">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>40</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>42</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
                 </table>
+                {/* </div> */}
+
                 <div className="total">
                     <p>Total</p>
                 </div>
