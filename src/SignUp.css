@@ -43,13 +43,12 @@
   width: 29.53vw;
   height: 44.23vh;
   margin-top: 16.34vh;
-  margin-left: 8.4vw;
+  margin-left: 5.468vw;
 }
 
 .sign-up form {
   color: #000000;
   margin-top: 9.4vh;
-  margin-left: 12.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,11 +61,11 @@
 .sign-up input {
   border-radius: 3.58vh;
   font-size: 2.5846vh;
-  height: 5.6307vh;
+  height: 6.2307vh;
   width: 27.2vw;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 4vh;
+  margin-bottom: 6vh;
   background-color: #b6686b4d;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -78,21 +77,31 @@
 }
 
 .sign-up button {
-  margin-top: 4vh;
+  margin-top: -8.5vh;
   padding: 2.5846153846153846vh;
   border: none;
   border-radius: 4.326923076923077vh;
   cursor: pointer;
-  background: linear-gradient(135deg, #2f4750 0%, #bb5fb6 100%);
+  background: #CAFF59;
+  font-weight: 700;
   font-size: 3.365vh;
   font-weight: bold;
-  color: #fff;
+  color: #000000;
   transition: background 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form{
+  width: 6vw;
+  margin-left: 15.39vw;
+}
+.form button{
+  margin-left:60.82vw;
+  width: 19.53vw;
 }
 
 .sign-up button:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #bb5fb6 0%, #2f4750 100%);
+  background: #b2ff0a;
   box-shadow: 0 4px 15px rgba(38, 162, 255, 0.5);
 }
 

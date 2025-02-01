@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './SignUp.css';
 import signup from './images/signup.png';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignUp = () => {
 
@@ -9,6 +10,17 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [email, setEmail] = useState('');
+    const history = useHistory();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (password !== confirmPassword) {
+            alert("Password doesn't match! \nTry Again");
+        }
+        else {
+            history.push('/login');
+        }
+    }
 
     return (
         <div className="sign-up">
@@ -22,7 +34,7 @@ const SignUp = () => {
                     <img src={signup} alt="Sign-up Img" />
                 </div>
                 <div className="form">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input type="text"
                             required
                             placeholder="Name"
@@ -62,5 +74,5 @@ const SignUp = () => {
         </div>
     );
 }
- 
+
 export default SignUp;
