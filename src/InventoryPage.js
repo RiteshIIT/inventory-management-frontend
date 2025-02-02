@@ -1,7 +1,7 @@
 import './InventoryPage.css'
 import { useState,useEffect } from 'react';
 const InventoryPage = () => {
-    var itemslist=[
+    const[itemslist,setitemslist]=useState([
         {
            name:"Chips",
            img:"https://i5.walmartimages.com/asr/8a71fcba-e670-4b5c-9120-8b162d739de3_1.39861ccb364e931a9b4411d1e96484c5.jpeg",
@@ -55,7 +55,7 @@ const InventoryPage = () => {
            quantity:8,
            id:8
        }
-    ];
+    ]);
     // let link=fetch('http://localhost:5000/');
     // link.then((itemslist)=>{
     //     return itemslist.json();
@@ -68,9 +68,8 @@ const InventoryPage = () => {
        }
        else return "#FF6F6F";
     }
-
     const[itemNo,SetItemNo]=useState('Item No :')
-    const[Quantity,SetQuantity]=useState('Quantity :')
+    const[Quantity,SetQuantity]=useState(1);
     // let items=document.querySelectorAll('.item');
      
     // items.forEach((item,index)=>{
@@ -79,8 +78,42 @@ const InventoryPage = () => {
     //            SetQuantity(`Quantity: ${itemslist[index].quantity}`);
     //            console.log("hello")
     //     })
-    // })   
-
+    // })
+    const[previndex,setprevindex]=useState(null);
+    var increment=((index)=>{
+        if(previndex==index&&Quantity<itemslist[index].quantity){
+            SetQuantity(number=>number+1);
+        }else{
+            setprevindex(index)
+            SetQuantity(1);
+        }
+    })
+    var decrement=((index)=>{
+        if(previndex==index){
+            if(Quantity>1){
+                SetQuantity(number=>number-1);
+            }
+        }else{
+            setprevindex(index)
+            SetQuantity(1);
+        }
+    })
+    var sell=(()=>{
+        if(itemslist[previndex].quantity>0){
+            setitemslist((previtemslist)=>
+                previtemslist.map((item,itemindex)=>{
+                    if(itemindex==previndex){
+                        let num=item.quantity-Quantity;
+                        SetQuantity(num);
+                        return {...item, quantity:(num)}  // new syntax
+                    }
+                    else{
+                        return item;
+                    }
+                })
+            )
+        }
+    })
     
     return (  
      <div id="inventoryPage">
@@ -89,17 +122,22 @@ const InventoryPage = () => {
             {itemNo}
             </div>
             <div id="quantity">
-            {Quantity}
+            Quantity : {Quantity}
             </div>
+            <button id="sell" onClick={()=>{
+                sell();
+            }}>sell</button>
+            <button id="cancel" onClick={()=>{SetQuantity(1)}}>cancel</button>
            </div>
            <div id="itemlist">
             {
                 itemslist.map((item,index)=>{
                    return <div className="item" onClick={()=>{
                     SetItemNo(`Item No : ${index+1}`);
-                    SetQuantity(`Quantity : `+item.quantity)
                    }}>
                         <div className="itemquant" style={{backgroundColor:colorcheck(item.quantity)}}>{item.quantity}</div>
+                        <button class="plus" onClick={()=>{increment(index); }}>+</button>
+                        <button class="minus"  onClick={()=>{decrement(index); }}>-</button>
                         <img className="itemimg" src={item.img}></img>
                         <div className="itemname">{item.name}</div>
                     </div>
