@@ -1,0 +1,89 @@
+.navbar {
+    background-color: #B6686A ;
+    height: 24.60vh;
+    width: 100vw;
+    margin-top: 0%;
+
+}
+
+.title {
+    background-color: #FF9FA1 ;
+    width: 39.14vw;
+    height: 8.53vh;
+    position: relative;
+    top: 8.10vh;
+    border-radius: 6.78vh ;
+    text-align:center;
+    font-size: 5.2vh;
+}
+
+h2 {
+    color : white;
+    font-size: 5.20vh ;
+}
+
+label {
+    background-color: #8DEA65 ;
+    border-radius: 4.05vh ;
+    font-weight: 400;
+    padding: 1.59vh 9.49vw;
+
+}
+
+.text {
+    top : 28.79vh;
+    text-align: center;
+    padding: 1.59vh 18.98vw;
+    left : 35.15vw;
+    font-size: 4.05vh;
+    line-height: 10.7vh;
+}
+
+input {
+    border-radius: 4.05vh ;
+    text-align: center;
+    background-color: #D9D9D9 ;
+    border-color: #D9D9D9;
+    padding: 1.59vh;
+    width: 29.6vw;
+    font-size: 4.05vh;
+}
+
+::placeholder {
+    color: rgb(100, 99, 99);
+}
+
+.sign-in button {
+    background-color: #CAFF59;
+    font-size: 5.20vh;
+    font-weight: 700;
+    border-radius: 5.20vh;
+    cursor: pointer;
+    padding: 1.78vh 6.09vw;
+}
+
+.smaller-buttons button {
+    background-color: #8DEA65;
+    border-radius: 2.89vh;
+    font-size: 2.89vh;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 1.15vh 2.96vw;
+}
+
+.left-image img {
+    position:absolute;
+    max-width: 29.21vw;
+    max-height: 38.49vh;
+    left: 3.35vw;
+    top: 64.13vh;
+}
+
+.right-image img {
+    position:absolute;
+    max-width: 27.42vw;
+    max-height: 51.23vh;
+    left: 69.45vw;
+    top: 28.79vh;
+
+}
