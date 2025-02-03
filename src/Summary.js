@@ -2,9 +2,19 @@ import { useState } from "react";
 import './Summary.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Summary = () => {
     // const [data, setData] = useState(null);
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/inventory-page');
+    }
+
+    const handleContinue = () => {
+        history.push('/home');
+    }
 
     return (
         <div className="summary">
@@ -12,19 +22,46 @@ const Summary = () => {
                 <div className="heading-summary">
                     <h2>Summary</h2>
                 </div>
-                <button>Continue</button>
+                <button onClick={handleContinue}>Continue</button>
             </div>
-            <div className="table">
-                <button>
+            <div className="container">
+                <button className="back" onClick={handleClick}>
                     <FontAwesomeIcon className="ic" icon={faLessThan} />Back
                 </button>
-                {/* <div className="table-container"> */}
-                <table>
+                <div className="table">
+                    <div className="headings">
+                        <p>S.No</p>
+                        <p>Item No.</p>
+                        <p>Quantity</p>
+                        <p>Amount</p>
+                    </div>
+                    <div className="columns">   
+                            <p>
+                                1
+                                <br />
+                                2
+                            </p>
+                            <p class='col2'>
+                                45
+                                <br />
+                                46
+                            </p>                       
+                            <p>
+                                10
+                                <br />5
+                            </p>                                             
+                            <p>
+                                120
+                                <br />150
+                            </p>
+                    </div>
+                </div>
+                {/* <table>
                     <thead>
                         <tr>
-                            <th class="heading1">S No.</th>
-                            <th class="heading2">Item no.</th>
-                            <th class="heading3">Quantity</th>
+                            <th>S No.</th>
+                            <th>Item no.</th>
+                            <th>Quantity</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,11 +76,11 @@ const Summary = () => {
                             <td>2</td>
                         </tr>
                     </tbody>
-                </table>
-                {/* </div> */}
+                </table> */}
 
                 <div className="total">
-                    <p>Total</p>
+                    <p>Total: </p>
+                    <p>270</p>
                 </div>
 
             </div>
