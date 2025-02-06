@@ -1,6 +1,18 @@
 import './home.css'
+import React, { useState } from 'react';
 import Saleslist from './saleslist';
+import AddItemPopUp from './addItemPopUp';
 const Homepage = () => {
+    const [addItemPopUp, setAddItemPopUp] = useState(false);
+
+    const openPopUp = () => {
+        setAddItemPopUp(true);
+    };
+
+    const closePopUp = () => {
+        setAddItemPopUp(false);
+    };
+
     var productlist=[
         {
             date: "12th Jan",
@@ -30,13 +42,14 @@ const Homepage = () => {
             },
         },
     ];
+
     return ( 
          <div id="homepage">
             <div id="homepagehead">
                 Welcome, user  
             </div>
             <div id="sidebar">
-                <div className="sidebaritem" id="newprod">New product <div id="plus">+</div>
+                <div className="sidebaritem" id="newprod" onClick = {openPopUp}>New product <div id="plus">+</div>
                 </div>
                 <div className="sidebaritem">Analytics</div>
                 <div className="sidebaritem">History</div>
@@ -51,6 +64,8 @@ const Homepage = () => {
                 <Saleslist productlist={productlist}></Saleslist>
             </div>
             <button id="startbutton">start</button>
+            
+            <AddItemPopUp openPopUp = {openPopUp} closePopUp = {closePopUp} addItemPopUp = {addItemPopUp} />
          </div>
      );
 }
