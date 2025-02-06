@@ -18,7 +18,7 @@ const SignUp = () => {
             alert("Password doesn't match! \nTry Again");
         }
         else {
-            history.push('/login');
+            history.push('/');
         }
     }
 
@@ -47,19 +47,19 @@ const SignUp = () => {
                             value={username}
                             onChange={(e) => { setUsername(e.target.value) }}
                         />
-                        <input type="text"
+                        <input type="email"
                             required
                             placeholder="Email"
                             value={email}
                             onChange={(e) => { setEmail(e.target.value) }}
                         />
-                        <input type="text"
+                        <input type="password"
                             required
                             placeholder="Password"
                             value={password}
                             onChange={(e) => { setPassword(e.target.value) }}
                         />
-                        <input type="text"
+                        <input type="password"
                             required
                             placeholder="Confirm Password"
                             value={confirmPassword}
