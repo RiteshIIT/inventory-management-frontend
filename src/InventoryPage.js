@@ -89,6 +89,7 @@ const InventoryPage = () => {
     //     })
     // })
     const[previndex,setprevindex]=useState(0);
+    const [selectedItem, setSelectedItem] = useState(null); //FOR MODAL
     var increment=((index)=>{
         if(previndex==index&&Quantity<itemslist[index].quantity){
             SetQuantity(number=>number+1);

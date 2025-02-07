@@ -87,7 +87,10 @@ const Homepage = () => {
             <div id="sidebar">
                 <div className="sidebaritem" id="newprod">New product <div id="plus">+</div>
                 </div>
+                <Link to=''>
                 <div className="sidebaritem">Log out</div>
+                </Link>
+                
                 {/* <div className="sidebaritem">History</div>
                 <div className="sidebaritem">Feedback</div>
                 <div className="sidebaritem">settings</div> */}
