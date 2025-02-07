@@ -3,6 +3,12 @@
 body{
     margin: 0;
 }
+#homepage{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    top: 0;
+}
 #sidebar{
     height: 100vh;
     width: 26.1vw;
@@ -18,12 +24,12 @@ body{
 .sidebaritem{
     font-family: "Inria Sans";
     font-weight: 400;
-    height: 4vh;
+    height: 6vh;
     background-color: #FF9FA1;
-    width: 16.4vw;
+    width: 13.4vw;
     text-align: center;
-    border-radius: 10px;
-    padding-top: .4vh;
+    border-radius: 20px;
+    padding-top: 1.4vh;
     box-sizing: border-box;
     display: inline-block;
     font-size: 19px;
@@ -35,8 +41,8 @@ body{
     height: 7.5vh;
     width: 15.7vw;
     margin-top: 11.5vh;
-    padding-top: .84vh;
-    margin-bottom: 15.3vh;
+    padding-top: 2vh;
+    margin-bottom: 45.3vh;
     font-size: 19px;
     font-weight: 700;
     box-sizing: border-box ;
@@ -58,21 +64,21 @@ body{
     box-sizing: border-box;
     padding-top: .36vh;
 }
-#recentsaleshead{
+#itemshead{
     position: absolute;
     left: 31.4vw;
-    top: 31.25vh;
+    top: 24.25vh;
     height: 5.1vh;
     width: 10.7vw;
     font-family: 'Inria Sans';
     font-weight: 400;
     font-size: 18px;
     color: #000000;
-    background-color: #8DEA65;
     border-radius: 18px;
     text-align: center;
     box-sizing: border-box;
     padding-top: 1vh;
+    background-color: #CAFF59;
 }
 #saleslist{
     position: absolute;
@@ -113,6 +119,7 @@ body{
     background-color: #CAFF59;
     box-sizing: border-box;
     border: none;
+    text-decoration: none;
 }
 #plus{
     display: inline-block;
@@ -131,4 +138,82 @@ body{
     background-image: url('https://media.tenor.com/notUnAjgm8UAAAAC/beluga-cat-meme.gif');
     background-size: cover;
     background-position: center;
+}
+#itemstable{
+    background-color: white;
+    border-spacing: 0;
+    /* margin-left: 1vw; */
+    border-radius: 3.6vh;
+    width: 60vw;
+    height: auto;
+    position: absolute;
+    left: -1vw;
+    top: -7vh;
+}
+#itemstable tr{
+    height: 8vh;
+}
+#itemstable th{
+    all: unset;
+    padding-left: 1vw;
+    margin: 0px;
+    display: inline-block;
+    border-radius: 0px;
+    height: 8vh;
+    width: 9.95vw;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Inria Sans';
+    font-weight: bold;
+    padding-top: 2.5vh;
+    margin-bottom: 1vh;
+}
+#tablebox{
+    position: absolute;
+    height: 43vh;
+    width: 60vw;
+    background-color: e;
+    top: 33vh;
+    left: 34vw;
+    border: 1px solid gray;
+    border-radius: 20px;
+    overflow: auto;
+}
+#itemstable img{
+    height:11vh;
+    width: 6vw;
+}
+#itemstable td{
+    margin: 0px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 12vh;
+    width: 9.95vw;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Inria Sans';
+    border-bottom: 4px solid white;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    top: 9vh;
+}
+#itemstable tr:nth-child(1) {
+    position: fixed;
+    top: 33vh;
+    z-index: 1;
+    left: 34vw;
+    border: 1px solid black;
+    width: 60vw;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #FF9FA1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2vw;
+    box-sizing: border-box;
+    color:white;
+}
+#itemstable tr:nth-of-type(even) td{
+    background-color: #EEEEEE;
 }
