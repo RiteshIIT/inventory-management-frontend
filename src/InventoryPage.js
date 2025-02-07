@@ -2,9 +2,9 @@ import './InventoryPage.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState,useEffect } from 'react';
 const InventoryPage = () => {
-    const[itemslist,setitemslist]=useState([
+    const [itemslist, setitemslist] = useState([
         {
-           name:"Chips",
+            name:"Chips",
            img:"https://i5.walmartimages.com/asr/8a71fcba-e670-4b5c-9120-8b162d739de3_1.39861ccb364e931a9b4411d1e96484c5.jpeg",
            quantity:9,
            id:1,
@@ -71,16 +71,16 @@ const InventoryPage = () => {
     // }).then((items)=>{
     //     itemslist=items;
     // }) 
-    function colorcheck(no){
-       if(no>=5){
-        return "#8DEA65";
-       }
-       else return "#FF6F6F";
+    function colorcheck(no) {
+        if (no >= 5) {
+            return "#8DEA65";
+        }
+        else return "#FF6F6F";
     }
     const[itemNo,SetItemNo]=useState('Item No : 1')
     const[Quantity,SetQuantity]=useState(1);
     // let items=document.querySelectorAll('.item');
-     
+
     // items.forEach((item,index)=>{
     //     item.addEventListener('click',()=>{
     //            SetItemNo(`Item No: ${index+1}`);
@@ -97,26 +97,26 @@ const InventoryPage = () => {
             SetQuantity(1);
         }
     })
-    var decrement=((index)=>{
-        if(previndex==index){
-            if(Quantity>1){
-                SetQuantity(number=>number-1);
+    var decrement = ((index) => {
+        if (previndex == index) {
+            if (Quantity > 1) {
+                SetQuantity(number => number - 1);
             }
-        }else{
+        } else {
             setprevindex(index)
             SetQuantity(1);
         }
     })
-    var sell=(()=>{
-        if(itemslist[previndex].quantity>0){
-            setitemslist((previtemslist)=>
-                previtemslist.map((item,itemindex)=>{
-                    if(itemindex==previndex){
-                        let num=item.quantity-Quantity;
+    var sell = (() => {
+        if (itemslist[previndex].quantity > 0) {
+            setitemslist((previtemslist) =>
+                previtemslist.map((item, itemindex) => {
+                    if (itemindex == previndex) {
+                        let num = item.quantity - Quantity;
                         SetQuantity(num);
-                        return {...item, quantity:(num)}  // new syntax
+                        return { ...item, quantity: (num) }  // new syntax
                     }
-                    else{
+                    else {
                         return item;
                     }
                 })
@@ -124,44 +124,61 @@ const InventoryPage = () => {
         }
     })
     
-    return (  
-     <div id="inventoryPage">
-                <div id="headbar">
-            <div id="itemno">
-            {itemNo}
+    return (
+        <div id="inventoryPage">
+            <div id="headbar">
+                <div id="itemno">
+                    {itemNo}
+                </div>
+                <div id="quantity">
+                    Quantity : {Quantity}
+                </div>
+                <button id="sell" onClick={() => {
+                    sell();
+                }}>sell</button>
+                <button id="cancel" onClick={() => { SetQuantity(1) }}>cancel</button>
             </div>
-            <div id="quantity">
-            Quantity : {Quantity}
+            <div id="itemlist">
+                {
+                    itemslist.map((item, index) => {
+                        return <div className="item" onClick={() => {
+                            SetItemNo(`Item No : ${index + 1}`);
+                        }}>
+                            {!selectedItem &&
+                                <div className="con">
+                                    <div className="itemquant" style={{ backgroundColor: colorcheck(item.quantity) }}>{item.quantity}</div>
+
+                                    <button class="plus" onClick={() => { increment(index); }}>+</button>
+                                    <button class="minus" onClick={() => { decrement(index); }}>-</button>
+                                </div>
+                            }
+                            <img className="itemimg " onClick={() => {
+
+                            }} src={item.img}></img>
+                            <div className="itemname" onClick={() => { setSelectedItem(item); }}>{item.name}</div>
+                        </div>
+                    })
+                }
             </div>
-            <button id="sell" onClick={()=>{
-                sell();
-            }}>sell</button>
-            <button id="cancel" onClick={()=>{SetQuantity(1)}}>cancel</button>
-           </div>
-           <div id="itemlist">
-            {
-                itemslist.map((item,index)=>{
-                   return <div className="item" onClick={()=>{
-                    SetItemNo(`Item No : ${index+1}`);
-                   }}>
-                        <div className="itemquant" style={{backgroundColor:colorcheck(item.quantity)}}>{item.quantity}</div>
-                        <button class="plus" onClick={()=>{increment(index); }}>+</button>
-                        <button class="minus"  onClick={()=>{decrement(index); }}>-</button>
-                        <img className="itemimg" src={item.img}></img>
-                        <div className="itemname">{item.name}</div>
-                    </div>
-                })
-            }
-           </div>
-           <Link to="/summary">
+            <Link to="/summary">
            <button id="stop">
             stop
             </button>
            </Link>
-           
-     </div>
+
+            {/* POP-UP */}
+            {selectedItem && (
+                <div className="modaldiv">
+                    <div className="overlay" onClick={(e) => setSelectedItem(null)}>
+                        <div className="modal-content">
+                            <h2>{selectedItem.name}</h2>
+                            <p>Price: Rs.{selectedItem.price} <br />Quantity: {selectedItem.quantity}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {/* Pop-Up ends here */}
+        </div>
     );
-    
 }
- 
 export default InventoryPage;
