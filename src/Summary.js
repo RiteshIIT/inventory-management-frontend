@@ -1,20 +1,9 @@
-import { useState } from "react";
 import './Summary.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const Summary = () => {
-    // const [data, setData] = useState(null);
-    const history = useHistory();
-
-    const handleClick = () => {
-        history.push('/inventory-page');
-    }
-
-    const handleContinue = () => {
-        history.push('/home');
-    }
 
     return (
         <div className="summary">
@@ -22,12 +11,16 @@ const Summary = () => {
                 <div className="heading-summary">
                     <h2>Summary</h2>
                 </div>
-                <button onClick={handleContinue}>Continue</button>
+                <Link to='/home'>
+                <button>Continue</button>
+                </Link>
             </div>
             <div className="container">
-                <button className="back" onClick={handleClick}>
+                <Link to = '/inventory-page'>
+                <button className="back">
                     <FontAwesomeIcon className="ic" icon={faLessThan} />Back
                 </button>
+                </Link>
                 <div className="table">
                     <div className="headings">
                         <p>S.No</p>

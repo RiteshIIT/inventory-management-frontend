@@ -146,7 +146,7 @@ const InventoryPage = () => {
                             SetItemNo(`Item No : ${index + 1}`);
                         }}>
                             {!selectedItem &&
-                                <div className="con">
+                                <div>
                                     <div className="itemquant" style={{ backgroundColor: colorcheck(item.quantity) }}>{item.quantity}</div>
 
                                     <button class="plus" onClick={() => { increment(index); }}>+</button>
