@@ -85,7 +85,7 @@ const Homepage = () => {
                 Welcome, user  
             </div>
             <div id="sidebar">
-                <div className="sidebaritem" id="newprod">New product <div id="plus">+</div>
+                <div className="sidebaritem" id="newprod" onClick={openPopUp}>New product <div id="plus">+</div>
                 </div>
                 <Link to=''>
                 <div className="sidebaritem">Log out</div>
@@ -120,6 +120,7 @@ const Homepage = () => {
                 start
                 </button> 
             </Link>
+            <AddItemPopUp openPopUp = {openPopUp} closePopUp = {closePopUp} addItemPopUp = {addItemPopUp} />
          </div>
      );
 }

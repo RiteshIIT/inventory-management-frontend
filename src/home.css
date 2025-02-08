@@ -201,10 +201,10 @@ body{
 #itemstable tr:nth-child(1) {
     position: fixed;
     top: 33vh;
-    z-index: 1;
+    z-index: 0;
     left: 34vw;
     border: 1px solid black;
-    width: 60vw;
+    width: 58.7vw;
     border-radius: 20px 20px 0px 0px;
     background-color: #FF9FA1;
     display: flex;
@@ -216,4 +216,7 @@ body{
 }
 #itemstable tr:nth-of-type(even) td{
     background-color: #EEEEEE;
+}
+#itemstable tr:nth-of-type(odd) td{
+    background-color:white;
 }
