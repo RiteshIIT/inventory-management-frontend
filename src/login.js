@@ -4,10 +4,12 @@ import { useState } from "react";
 import './login.css';
 import left from './images/login-left.png';
 import right from './images/login-right.png';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
 function LogIn (props) {
   //console.log ("Login routing has been done");
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setName] = useState("Username");
+    const [password, setPassword] = useState("Password");
   
     function handleName(event) {
       setName(event.target.value);
@@ -15,7 +17,7 @@ function LogIn (props) {
     function handlePassword(event) {
         setPassword(event.target.value);
       }
-  
+      const history=useHistory();
     /*function handleClick(event) {
       setName(name);
       setPassword (password);
@@ -24,10 +26,34 @@ function LogIn (props) {
       event.preventDefault();
     }
       */
-     function handleClick (event) {
-      setName(name);
-      setPassword(password);
-      console.log(name, password);
+     async function handleClick (event) {
+       setName(username);
+       setPassword(password);
+       // console.log(name, password);
+       try {
+         const response = await axios.post('http://127.0.0.1:8000/login/', {
+           username,
+           password,
+          });
+          let tok=`Token ${response.data.token}`
+          console.log(tok);
+        if (response.data.token) {
+          localStorage.setItem('auth_token', response.data.token);
+
+          // Set token in axios default headers
+          axios.defaults.headers.common['Authorization'] = tok;
+
+          alert("Login Successful! Redirecting to home...");
+          history.push('/home');  // Redirect after login
+      }
+        // alert("Login Successful! Redirecting to login...");
+        // history.push('/home');
+    }
+    catch (error) {
+      console.log(error);
+        console.error("Login error:", error.response?.data);
+        alert("Login failed: " + JSON.stringify(error.response?.data));
+    }
      }
 
     return (  
@@ -46,18 +72,16 @@ function LogIn (props) {
         </div>
       
         <div className="text">
-         <label> Username : </label>
          <div className="input"> 
          <input type = "text" placeholder = "Enter Username" onChange = {handleName} />
          </div>
-         <label> Password : </label>
          <div className="input">
             <input type = "password" placeholder = "Enter password" onChange = {handlePassword} />
          </div>
          <div className="sign-in button"> 
-         <Link to = "/home">
+         {/* <Link to = "/home"> */}
          <button type = "submit" onClick = {handleClick}>  Sign-In </button>
-         </Link>
+         {/* </Link> */}
          </div>
          <div className="smaller-buttons">
          <Link to = "/sign-up"> 

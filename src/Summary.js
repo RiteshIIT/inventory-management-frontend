@@ -30,22 +30,22 @@ const Summary = () => {
                     </div>
                     <div className="columns">   
                             <p>
-                                1
+                                
                                 <br />
-                                2
+                                
                             </p>
                             <p class='col2'>
-                                45
+                                {/* 45
                                 <br />
-                                46
+                                46 */}
                             </p>                       
                             <p>
-                                10
-                                <br />5
+                                {/* 10
+                                <br />5 */}
                             </p>                                             
                             <p>
-                                120
-                                <br />150
+                                {/* 120
+                                <br />150 */}
                             </p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Summary = () => {
 
                 <div className="total">
                     <p>Total: </p>
-                    <p>270</p>
+                    {/* <p>270</p> */}
                 </div>
 
             </div>
