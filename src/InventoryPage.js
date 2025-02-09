@@ -20,7 +20,8 @@ const InventoryPage = () => {
 
      useEffect(() => {
          fetch();
-     }, [ch]);       
+       //  console.log("fetched")
+     }, [ch]); //ch      
 //le.log(itemslist[4].description)
 
 
@@ -151,24 +152,28 @@ const InventoryPage = () => {
             // )
             const token = localStorage.getItem("auth_token"); // Retrieve token from local storage
     try {
-        const response =  axios.put(
-            `http://127.0.0.1:8000/inventory/${selectedItem2.id}/`,  // Replace with actual API URL
-            { quantity: selectedItem2.quantity - Quantity },
-            {
-                headers: {
-                    "Authorization": `Token ${token}`,
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-        SetQuantity(1);
-        console.log("Update Successful:", response.data);
+        if(selectedItem2.quantity-Quantity>0){
+            const response =  axios.put(
+                `http://127.0.0.1:8000/inventory/${selectedItem2.id}/`,  // Replace with actual API URL
+                { quantity: selectedItem2.quantity - Quantity },
+                {
+                    headers: {
+                        "Authorization": `Token ${token}`,
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            SetQuantity(1);
+            console.log("Update Successful:", response.data);
+        }
+        
     } catch (error) {
         console.error("Error updating quantity:", error.response?.data);
         alert("Failed to update quantity.");
     }
-    fetch();
 }
+// fetch();
+window.location.reload();
     })
     
     return (
