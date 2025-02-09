@@ -2,6 +2,7 @@ import { useState } from "react";
 import './SignUp.css';
 import signup from './images/signup.png';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
 
 const SignUp = () => {
 
@@ -12,13 +13,21 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const history = useHistory();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            alert("Password doesn't match! \nTry Again");
-        }
-        else {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/users/', {
+                username,
+                email,
+                password,
+                password2: confirmPassword
+            });
+            alert("Signup Successful! Redirecting to login...");
             history.push('/');
+        }
+        catch (error) {
+            console.error("Signup error:", error.response?.data);
+            alert("Signup failed: " + JSON.stringify(error.response?.data));
         }
     }
 
